@@ -1,0 +1,311 @@
+:root {
+  --accent: hsl(301deg 66% 29%);
+  --base: hsl(300deg 100% 76%);
+  --bgaccent: #424242;
+  --bgbase: #333333;
+  --textaccent: #a9a9a9;
+  --textbase: #fff;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--base);
+  color: var(--accent);
+}
+
+/* Base styling for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+
+/* Root element styling */
+html {
+  background-color: var(--bgbase);
+  color: var(--textbase);
+  font: 100%/1.5 system-ui;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  html {
+    font-size: 125%;
+    max-width: 42em;
+  }
+}
+
+/* Page title styling */
+.page-title {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: -2px 2px 2px var(--accent);
+}
+
+/* Page content styling */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 1.5em;
+  row-gap: 1rem;
+}
+
+/* Header and Footer styling */
+header,
+footer {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 1.5em;
+  align-items: top;
+}
+
+header img,
+footer img {
+  max-height: 2rem;
+}
+
+/* Navigation styling */
+nav {
+  column-gap: 1rem;
+  display: flex;
+  overflow-wrap: break-word;
+}
+
+/* Table of contents styling */
+.table-of-contents {
+  border: 1px dashed var(--textbase);
+  padding: 1rem;
+}
+
+.table-of-contents * {
+  list-style-type: none;
+}
+
+.table-of-contents::before {
+  content: "Table of contents:";
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Footnotes styling */
+.footnotes {
+  margin-top: 3rem;
+}
+
+.footnotes ol {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  row-gap: 1rem;
+}
+
+.footnotes ol::before {
+  content: "Footnotes";
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footnotes ol li {
+  border: 1px dashed var(--textbase);
+  padding: 1rem;
+}
+
+.footnotes ol li p {
+  display: inline;
+}
+
+/* Horizontal rule styling */
+hr {
+  border: 1px solid var(--textbase);
+  border-style: solid;
+}
+
+/* Ordered and unordered list styling */
+ol,
+ul {
+  list-style-position: inside;
+}
+
+ol li ol,
+ol li ul,
+ul li ol,
+ul li ul {
+  margin: 0 2em;
+}
+
+ol li p,
+ul li p {
+  margin: 0.5rem 0;
+}
+
+ul li:has(p)::marker {
+  content: "📌";
+}
+
+/* Image styling */
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Blockquote styling */
+blockquote {
+  border-left: solid 1px var(--base);
+  font-style: italic;
+  padding-left: 1rem;
+}
+
+/* Table styling */
+table {
+  border: dashed 1px var(--textbase);
+  font: 85%/1.5 system-ui;
+  margin: 1rem 0;
+  max-height: 70vh;
+  min-width: 100%;
+  text-align: left;
+}
+
+table * {
+  border: none;
+}
+
+table tbody {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+table thead {
+  background-color: var(--bgaccent);
+}
+
+table tr td,
+table tr th {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--bgaccent);
+}
+
+/* Code styling */
+pre {
+  background-color: var(--textbase);
+  border: 1px solid var(--textaccent);
+  color: var(--accent);
+  font-family: monospace, monospace;
+  margin: 1em 0;
+  max-height: 70vh;
+  padding: 0.5em;
+}
+
+code {
+  background-color: var(--textbase);
+  border: 1px solid var(--textaccent);
+  color: var(--accent);
+}
+
+pre > code {
+  border: none;
+}
+
+/* Headings styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--textbase);
+  margin: 2.5rem 0 1rem;
+}
+
+/* Anchor tag styling */
+a {
+  color: var(--base);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+/* Paragraph styling */
+p {
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+/* Description list styling */
+dl {
+  font-family: monospace, monospace;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dl dd {
+  margin: -1em 0 1em 1em;
+}
+
+/* Posts list styling */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  row-gap: 1rem;
+}
+
+.posts-list .post {
+  border: 1px dashed var(--textbase);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  row-gap: 0.5rem;
+  width: 100%;
+}
+
+.post-list-title a {
+  display: block;
+  font-size: 2em;
+}
+
+.post-list-title a:hover,
+.post-list-title a:focus,
+.post-list-title a:active {
+  background: var(--bgaccent);
+  text-decoration: none;
+}
+
+/* Post meta styling */
+.post-meta {
+  color: var(--textaccent);
+  column-gap: 1rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+/* Form input styling */
+form input {
+  box-sizing: border-box;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 50%;
+}

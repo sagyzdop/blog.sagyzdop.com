@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --accent: hsl(301deg 66% 29%);
+        --base: hsl(300deg 100% 76%);
+        --bgaccent: #424242;
+        --bgbase: #333333;
+        --textaccent: #a9a9a9;
+        --textbase: #fff;
+      }
+
+      /* Selection styling */
+      ::selection,
+      a::selection {
+        background: var(--base);
+        color: var(--accent);
+      }
+
+      /* Base styling for all elements */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        overflow: auto;
+        padding: 0;
+      }
+
+      /* Root element styling */
+      html {
+        background-color: var(--bgbase);
+        color: var(--textbase);
+        font: 100%/1.5 system-ui;
+        height: 100%;
+        margin: 0 auto;
+      }
+
+      /* Body styling */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      /* Media query for larger screens */
+      @media (min-width: 768px) {
+        html {
+          font-size: 125%;
+          max-width: 42em;
+        }
+      }
+
+      /* Page title styling */
+      .page-title {
+        font-size: 3em;
+        margin: 0;
+        text-shadow: -2px 2px 2px var(--accent);
+      }
+
+      /* Page content styling */
+      .page-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 1.5em;
+        row-gap: 1rem;
+      }
+
+      /* Header and Footer styling */
+      header,
+      footer {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        justify-content: space-between;
+        padding: 1.5em;
+      }
+
+      /* Navigation styling */
+      nav {
+        column-gap: 1rem;
+        display: flex;
+      }
+      /* Headings styling */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--textbase);
+        margin: 2.5rem 0 1rem;
+      }
+
+      /* Anchor tag styling */
+      a {
+        color: var(--base);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus,
+      a:active {
+        text-decoration: underline;
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <title>404 is it?</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="home.php">home</a>
+      <nav>
+        <a href="#"></a>
+        <a href="post.php?id=-1&title=About">about</a>
+      </nav>
+    </header>
+    <div class="page-content">
+      <h1 class="page-title">Oops, 404</h1>
+    </div>
+    <footer>
+      <a href="#top" class="footer-link">Back to Top</a>
+      <nav>
+        <a href="#" class="footer-link"></a>
+        <a href="https://instagram.com/sagyzdop">instagram</a>
+      </nav>
+    </footer>
+  </body>
+</html>
